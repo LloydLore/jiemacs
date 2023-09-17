@@ -598,6 +598,8 @@
   :init
   (setq centaur-tabs-enable-key-bindings t)
   :config
+  (custom-set-faces! '(tab-line :inherit default
+                       :background "grey23"))
   (setq centaur-tabs-style "bar"
         centaur-tabs-height 15
         centaur-tabs-set-icons t
