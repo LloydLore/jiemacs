@@ -22,12 +22,12 @@
 (setq org-imenu-depth 7)
 
 ;; toc-org
-(use-package toc-org
+(use-package! toc-org
   :config
   (progn (add-hook 'org-mode-hook 'toc-org-mode)))
 
 ;; org table alignment
-(use-package valign
+(use-package! valign
   :config
   (add-hook 'org-mode-hook #'valign-mode)
   (setq valign-fancy-bar t))
