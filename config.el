@@ -31,7 +31,7 @@
 ;;     doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;(setq doom-font (font-spec :family "FiraMono Medium" :size 15)
 ;;      doom-variable-pitch-font (font-spec :family "Cantarell Regular" :size 15))
-(setq doom-font (font-spec :family "RobotoMonoNerdFont" :size 14))
+(setq doom-font (font-spec :family "RobotoMonoNerdFont" :size 16))
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -934,8 +934,14 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (setq pdf-view-restore-filename "~/.config/emacs/.local/cache/.pdf-view-restore")
   (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode))
 ;; writeroom-mode
-(setq writeroom-width 40)
-(setq +zen-text-scale 1.1)
+
+(use-package! writeroom-mode
+  :config
+  (setq +zen-text-scale 2)
+  (setq writeroom-width 50)
+  (add-hook 'writeroom-mode-hook (lambda ()
+                                   (display-line-numbers-mode -1))))
+
 ;; load-file
 (load-file "~/.config/doom/customize-org-universal-os.el")
 (load-file "~/.config/doom/org-mode-setup-universal-os.el")
