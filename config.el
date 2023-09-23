@@ -696,7 +696,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 (use-package wakatime-mode
   :config
   (setq wakatime-cli-path "/usr/bin/wakatime")
-  (setq wakatime-api-key "waka_853a3834-1790-40b4-b011-18f27e3033b3")
+  (setq wakatime-api-key "waka_eb44336f-5e84-4e7e-84a8-13f0c683ba65")
   (global-wakatime-mode +1))
 
 (use-package consult-org-roam
