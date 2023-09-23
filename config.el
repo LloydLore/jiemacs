@@ -268,7 +268,7 @@
   (setq pyim-page-length 8)
 
   (custom-set-faces! '(pyim-page :inherit default
-                       :background "cyan"
+                       :background "#D8DEE9"
                        :foreground "gray0"))
 
   (defun my-orderless-regexp (orig_func component)
