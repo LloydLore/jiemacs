@@ -101,7 +101,9 @@
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
-                      (font-spec :family "Noto Sans CJK SC"))))
+                      (font-spec :family "Sarasa Gothic SC"))))
+
+(add-hook 'after-setting-font-hook #'+set-cjk)
 
 ;; (add-hook 'doom-init-ui-hook #'+set-cjk)
 
