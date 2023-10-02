@@ -103,7 +103,7 @@
                       charset
                       (font-spec :family "Noto Sans CJK SC"))))
 
-(add-hook 'doom-init-ui-hook #'+set-cjk)
+;; (add-hook 'doom-init-ui-hook #'+set-cjk)
 
 ;; word wrap
 (setq word-wrap-by-category t)
@@ -245,6 +245,7 @@
   ;; :quelpa (pyim :fetcher github :repo "merrickluo/pyim")
   :init
   (setq pyim-title "R")
+  (setq pyim-indicator-modeline-string (list "R/C" "R/E"))
   :config
   ;; (use-package pyim-basedict
   ;;   :config
@@ -255,7 +256,7 @@
   (global-set-key (kbd "M-o") 'pyim-convert-string-at-point)
   (setq pyim-dcache-auto-update nil)
   (setq default-input-method "pyim")
-  (setq pyim-page-style 'vertical)
+  (setq pyim-page-style 'two-lines)
   ;; 我使用全拼
   (with-eval-after-load "liberime"
     ;; (setq liberime-shared-data-dir "/usr/share/rime-data/")
