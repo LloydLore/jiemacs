@@ -68,3 +68,8 @@
 (package! nord-theme)
 (package! keycast)
 (package! liberime :recipe (:host github :repo "merrickluo/liberime"))
+(package! anki-editor)
+(package! anki-editor-view
+  :recipe (:type git
+           :host gitlab
+           :repo "vherrmann/anki-editor-view"))

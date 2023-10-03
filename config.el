@@ -1013,6 +1013,10 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
     '(keycast-command :inherit doom-modeline-debug :height 1.0)
     '(keycast-key :inherit custom-modified :height 1.1 :weight bold)))
 
+;; anki-editor-view
+(use-package! anki-editor-view
+  :config
+  (setq anki-editor-view-files (list org-directory)))
 ;; tab line mode
 ;; (unless (version< emacs-version "27")
 ;;   (use-package tab-line
