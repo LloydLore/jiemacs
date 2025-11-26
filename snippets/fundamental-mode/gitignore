@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: gitignore
+# key: gig
+# --
+
+# compiled
+*.elc
+
+# Packaging
+.cask
+
+# Backup files
+*~
+
+# Undo-tree save-files
+*.~undo-tree
+
+# ignore files in folder
+input/

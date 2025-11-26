@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: org-header
+# key: oghd
+# --
+# ------------------------------------------------------------------------------
+#+TITLE:     `(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`  $1
+#+SUBTITLE:  Created: `(format-time-string "%e %B %Y")`
+#+AUTHOR:    `user-full-name`
+#+EMAIL:     `user-mail-address`
+#+LANGUAGE:  en
+#+STARTUP:   content showstars indent inlineimages hideblocks
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="GTD.css" />
+#+OPTIONS:   toc:2 html-scripts:nil num:nil html-postamble:nil html-style:nil ^:nil $2
+# ------------------------------------------------------------------------------
+
+$0
+
+# ------------------------------------------------------------------------------
+# `(file-name-nondirectory (buffer-file-name))` ends here

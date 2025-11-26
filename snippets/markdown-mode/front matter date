@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: front matter date
+# key: dtfm
+# --
+
+`(concat (format-time-string "%Y-%m-%d") "T" (format-time-string "%H:%M:%S"))`$0

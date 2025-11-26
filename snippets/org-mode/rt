@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: rt
+# key: :rt
+# --
+
+* [/] `(format-time-string "%Y-%B-%e")` Routines
+- [ ] archive the email
+- [ ] close items
+- [ ] open items
+- [ ] make agenda
+- [ ] Japanese
+- [ ] Writing

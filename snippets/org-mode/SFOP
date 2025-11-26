@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: SafetyFinacialPrivacyOperational
+# key: SFOP
+# --
+Summarize the Safety/Privacy/Finacial/Operational analysis based on &0 with each 60 words respectively. And label each analysis with category of "negligible/moderate/major/severe"

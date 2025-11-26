@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: markdown front matter boundary
+# key: mkdfmbdy
+# --
+---
+&0
+---

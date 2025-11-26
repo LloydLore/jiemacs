@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Week Number of the Year
+# key: weeknum                                                              
+# --
+
+`(concat (format-time-string "%Y") "W" (format-time-string "%W"))`$0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Export to CSHub
+# key: excshub                                                                                                                             
+# --
+
+#+EXPORT_FILE_NAME: C:/Users/vjwlq9/Documents/Project/CSHub/source/`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.md

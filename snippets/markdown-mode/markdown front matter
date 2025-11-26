@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: markdown front matter
+# key: mfm
+# --
++++
+date = `(concat (format-time-string "%Y-%m-%d") "T" (format-time-string "%H:%M:%S"))`
+draft = false
+title = $1
+[params]
+    author = `(eval user-full-name)`
++++
+$0

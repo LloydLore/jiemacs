@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: Org Hugo Header
+# key: ohhd
+# --
+
+#+title: $0
+#+OPTIONS: author:"Luo Jie" ^:{}
+#+startup: content
+#+HUGO_BASE_DIR: ./../
+#+HUGO_SECTION: posts
+#+HUGO_CUSTOM_FRONT_MATTER: :toc true :isCJKLanguage true
+#+HUGO_AUTO_SET_LASTMOD: t
+#+HUGO_DRAFT: false
+#+DATE: [2023-05-06]
+#+HUGO_TAGS:
+#+HUGO_CATEGORIES:
+#+hugo_weight: auto
+#+hugo_auto_set_lastmod: t
+#+startup: noindent

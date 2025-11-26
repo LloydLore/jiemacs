@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Local Variable with Markdown Auto Export
+# key: lvmdae
+# --
+# Local Variables:
+# eval: (add-hook 'before-save-hook #'org-md-export-to-markdown nil t)
+# End:
