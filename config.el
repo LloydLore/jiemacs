@@ -77,10 +77,27 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;; (setq doom-theme 'doom-one)
-;; (load-theme 'modus-operandi t)
+(setq doom-theme 'doom-dracula)
+;; (load-theme 'modus-vivendi t)
 ;; (load-theme 'leuven t)
-(load-theme 'sanityinc-tomorrow-night t)
+;; (load-theme 'sanityinc-tomorrow-night t)
+
+;; (setq doom-theme 'catppuccin)
+;; (setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
+;; (load-theme 'catppuccin t t)
+;; (catppuccin-set-color 'base "#000000") ;; change base to #000000 for the currently active flavor
+;; (catppuccin-set-color 'crust "#222222" 'frappe) ;; change crust to #222222 for frappe
+;; (catppuccin-reload)
+
+;; set the vertico-current face
+(custom-set-faces! '(vertico-current :inherit hi-line
+                     :background "#7f7f7f"
+                     :foreground "gray0"
+                     :height 110))
+
+(custom-theme-set-faces! 'doom-dracula
+  '(region :background "#88c0d0" :foreground "black"))
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -149,7 +166,10 @@
                      project-name))))
         (:eval
          (format " ==>%s"
-                 buffer-file-truename))))
+                 buffer-file-truename))
+        (:eval
+         (format " 💖 Love"))))
+
 
 (setq recentf-max-saved-items 1000)
 (setq vc-handled-backends nil)
@@ -1120,10 +1140,10 @@ tasks."
 
 (use-package! copilot
   :hook
-  ((prog-mode . copilot-mode)
-   (org-mode . copilot-mode)
-   (markdown-mode . copilot-mode))
-  ;; (prog-mode . copilot-mode)
+  ;; ((prog-mode . copilot-mode)
+  ;;  (org-mode . copilot-mode)
+  ;;  (markdown-mode . copilot-mode))
+  (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
               ("TAB" . 'copilot-accept-completion)
@@ -1191,6 +1211,11 @@ tasks."
 
   (add-to-list 'awesome-tray-active-modules "jie-evil")
   (add-to-list 'awesome-tray-active-modules "org-clock")
+
+  (setq awesome-tray-adjust-mode-line-color-enable nil)
+  (with-eval-after-load 'breadcrumb
+    (set-face-attribute 'header-line nil :background 'unspecified :inherit 'default))
+  
   (awesome-tray-mode +1))
 
 

@@ -66,6 +66,7 @@
 (package! consult-denote)
 (package! org-transclusion)
 (package! modus-themes)
+(package! catppuccin-theme)
 (package! super-save)
 (package! org-bars :recipe (:host github :repo "tonyaldon/org-bars"))
 (package! org-roam-ui)
@@ -168,3 +169,6 @@
 
 ;; adaptive wrap for markdown and orgmode table
 (package! adaptive-wrap)
+
+;; disable the default yas snippets
+(package! doom-snippets :ignore t)

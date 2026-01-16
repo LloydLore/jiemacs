@@ -4,20 +4,6 @@
 ;; org-agenda-time-grid
 
 (require 'org-habit)
-;; (setq org-agenda-time-grid (quote ((daily today require-timed)
-;;                                    (300
-;;                                     600
-;;                                     900
-;;                                     1200
-;;                                     1500
-;;                                     1800
-;;                                     2100
-;;                                     2400)
-;;                                    "......"
-;;                                    "-----------------------------------------------------"
-;;                                    ))
-;;       org-agenda-current-time-string
-;;       "← now ─────────────────────────────────────────────────")
 
 (customize-set-variable 'org-agenda-time-grid
 
@@ -125,19 +111,6 @@
               (sequence "ISSUE(i)" "EVENT(e)" "BUG(b)" "|" "SOLOVED(s)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "MEETING" "|" "CANCELLED(c@/!)" "PHONE" "DELEGATE(l@/!)" ))))
 
-;; (setq org-todo-keyword-faces
-;;       (quote (("TODO" :foreground "red" :weight bold)
-;;               ("NEXT" :foreground "blue" :weight bold)
-;;               ("ISSUE" :foreground "red" :weight bold)
-;;               ("EVENT" :foreground "purple" :weight bold)
-;;               ("BUG" :foreground "red" :weight bold)
-;;               ("DONE" :foreground "forest green" :weight bold)
-;;               ("WAITING" :foreground "orange" :weight bold)
-;;               ("HOLD" :foreground "magenta" :weight bold)
-;;               ("CANCELLED" :foreground "forest green" :weight bold)
-;;               ("MEETING" :foreground "forest green" :weight bold)
-;;               ("PHONE" :foreground "forest green" :weight bold))))
-
 ;; fast todo selection
 (setq org-use-fast-todo-selection t)
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
@@ -165,20 +138,20 @@
 (if (eq system-type 'gnu/linux)
     (setq org-capture-templates
           (quote (("i" "Inbox" entry (file "~/git/org/refile.org")
-                   "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+                   "* TODO %?\n%i\n%a\n" :clock-in t :clock-resume t)
                   ("t" "Personal todo" entry
                    (file+headline +org-capture-todo-file "Inbox")
-                   "* [ ] %?\n%i\n%a" :prepend t)
+                   "* [ ] %?\n%i\n%a\n" :prepend t)
                   ("r" "respond" entry (file "~/git/org/refile.org")
-                   "* NEXT Respond to %?:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish nil)
+                   "* NEXT Respond to %?:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :immediate-finish t)
                   ("n" "note" entry (file "~/git/org/refile.org")
-                   "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+                   "* %? :NOTE:\n%U\n%a")
                   ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
-                   "* %?\n%U\n" :clock-in t :clock-resume t)
+                   "* %?\n%U") 
                   ("m" "Meeting" entry (file "~/git/org/refile.org")
-                   "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+                   "* MEETING with %? :MEETING:\n%U")
                   ("c" "Phone call" entry (file "~/git/org/refile.org")
-                   "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+                   "* PHONE %? :PHONE:\n%U")
                   ("p" "Templates for projects")
                   ("pt" "Project-local todo" entry  ; {project-root}/todo.org
                    (file+headline +org-capture-project-todo-file "Inbox")
@@ -219,20 +192,20 @@
                    "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
   (setq org-capture-templates
         (quote (("i" "Inbox" entry (file "/mnt/c/tools/msys64/home/vjwlq9/git/org/refile.org")
-                 "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+                 "* TODO %?\n%U\n%a\n")
                 ("t" "Personal todo" entry
                  (file+headline +org-capture-todo-file "Inbox")
                  "* [ ] %?\n%i\n%a" :prepend t)
                 ("r" "respond" entry (file "/mnt/c/tools/msys64/home/vjwlq9/git/org/refile.org")
-                 "* NEXT Respond to %?:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish nil)
+                 "* NEXT Respond to %?:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :immediate-finish t)
                 ("n" "note" entry (file "/mnt/c/tools/msys64/home/vjwlq9/git/org/refile.org")
-                 "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+                 "* %? :NOTE:\n%U\n%a\n")
                 ("j" "Journal" entry (file+datetree "/mnt/c/tools/msys64/home/vjwlq9/git/org/diary.org")
-                 "* %?\n%U\n" :clock-in t :clock-resume t)
+                 "* %?\n%U\n")
                 ("m" "Meeting" entry (file "/mnt/c/tools/msys64/home/vjwlq9/git/org/refile.org")
-                 "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+                 "* MEETING with %? :MEETING:\n%U")
                 ("c" "Phone call" entry (file "/mnt/c/tools/msys64/home/vjwlq9/git/org/refile.org")
-                 "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+                 "* PHONE %? :PHONE:\n%U")
                 ("p" "Templates for projects")
                 ("pt" "Project-local todo" entry  ; {project-root}/todo.org
                  (file+headline +org-capture-project-todo-file "Inbox")
@@ -259,113 +232,8 @@
                  "* %U %?\n %i\n %a"
                  :heading "Changelog"
                  :prepend t)
-
-                ;; ("p" "Protocol" entry (file "~/git/org/refile.org")
-                ;;  "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-                ;; ("L" "Protocol Link" entry (file "~/git/org/refile.org")
-                ;;  "* %? [[%:link][%:description]] \nCaptured On: %U")
                 ("h" "Habit" entry (file "/mnt/c/tools/msys64/home/vjwlq9/git/org/refile.org")
                  "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")))))
-
-;; (if (eq system-type 'windows-nt)
-;;     (setq org-capture-templates
-;;           (quote (("i" "Inbox" entry (file "~/git/org/refile.org")
-;;                    "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-;;                   ("t" "Personal todo" entry
-;;                    (file+headline +org-capture-todo-file "Inbox")
-;;                    "* [ ] %?\n%i\n%a" :prepend t)
-;;                   ("r" "respond" entry (file "~/git/org/refile.org")
-;;                    "* NEXT Respond to %?:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish nil)
-;;                   ("n" "note" entry (file "~/git/org/refile.org")
-;;                    "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-;;                   ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
-;;                    "* %?\n%U\n" :clock-in t :clock-resume t)
-;;                   ("m" "Meeting" entry (file "~/git/org/refile.org")
-;;                    "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-;;                   ("c" "Phone call" entry (file "~/git/org/refile.org")
-;;                    "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-;;                   ("p" "Templates for projects")
-;;                   ("pt" "Project-local todo" entry  ; {project-root}/todo.org
-;;                    (file+headline +org-capture-project-todo-file "Inbox")
-;;                    "* TODO %?\n%i\n%a" :prepend t)
-;;                   ("pn" "Project-local notes" entry  ; {project-root}/notes.org
-;;                    (file+headline +org-capture-project-notes-file "Inbox")
-;;                    "* %U %?\n%i\n%a" :prepend t)
-;;                   ("pc" "Project-local changelog" entry  ; {project-root}/changelog.org
-;;                    (file+headline +org-capture-project-changelog-file "Unreleased")
-;;                    "* %U %?\n%i\n%a" :prepend t)
-;;                   ("o" "Centralized templates for projects")
-;;                   ("ot" "Project todo" entry
-;;                    (function +org-capture-central-project-todo-file)
-;;                    "* TODO %?\n %i\n %a"
-;;                    :heading "Tasks"
-;;                    :prepend nil)
-;;                   ("on" "Project notes" entry
-;;                    (function +org-capture-central-project-notes-file)
-;;                    "* %U %?\n %i\n %a"
-;;                    :heading "Notes"
-;;                    :prepend t)
-;;                   ("oc" "Project changelog" entry
-;;                    (function +org-capture-central-project-changelog-file)
-;;                    "* %U %?\n %i\n %a"
-;;                    :heading "Changelog"
-;;                    :prepend t)
-
-;;                   ;; ("p" "Protocol" entry (file "~/git/org/refile.org")
-;;                   ;;  "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-;;                   ;; ("L" "Protocol Link" entry (file "~/git/org/refile.org")
-;;                   ;;  "* %? [[%:link][%:description]] \nCaptured On: %U")
-;;                   ("h" "Habit" entry (file "~/git/org/refile.org")
-;;                    "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
-;;   (setq org-capture-templates
-;;         (quote (("i" "Inbox" entry (file "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/refile.org")
-;;                  "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-;;                 ("r" "respond" entry (file "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/refile.org")
-;;                  "* NEXT Respond to %?:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish nil)
-;;                 ("n" "note" entry (file "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/refile.org")
-;;                  "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-;;                 ("j" "Journal" entry (file+datetree "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/diary.org")
-;;                  "* %?\n%U\n" :clock-in t :clock-resume t)
-;;                 ("w" "org-protocol" entry (file "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/refile.org")
-;;                  "* TODO Review %c\n%U\n" :immediate-finish t)
-;;                 ("m" "Meeting" entry (file "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/refile.org")
-;;                  "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-;;                 ("c" "Phone call" entry (file "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/refile.org")
-;;                  "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-;;                 ("h" "Habit" entry (file "/mnt/c/Users/vjwlq9/AppData/Roaming/git/org/refile.org")
-;;                  "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")
-;;                 ("p" "Protocol" entry (file+headline ,(concat org-directory "notes.org") "Inbox")
-;;                  "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-;;                 ("L" "Protocol Link" entry (file+headline ,(concat org-directory "notes.org") "Inbox")
-;;                  "* %? [[%:link][%:description]] \nCaptured On: %U")))))
-
-
-;; (setq org-capture-templates
-;;       (quote (("i" "Inbox" entry (file "~/git/org/refile.org")
-;;                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-;;               ("r" "respond" entry (file "~/git/org/refile.org")
-;;                "* NEXT Respond to %?:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish nil)
-;;               ("n" "note" entry (file "~/git/org/refile.org")
-;;                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-;;               ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
-;;                "* %?\n%U\n" :clock-in t :clock-resume t)
-;;               ("w" "org-protocol" entry (file "~/git/org/refile.org")
-;;                "* TODO Review %c\n%U\n" :immediate-finish t)
-;;               ("m" "Meeting" entry (file "~/git/org/refile.org")
-;;                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-;;               ("p" "Phone call" entry (file "~/git/org/refile.org")
-;;                "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-;;               ("h" "Habit" entry (file "~/git/org/refile.org")
-;;                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
-
-;; Remove empty LOGBOOK drawers on clock out, somehow it needs further tweak
-;; (defun bh/remove-empty-drawer-on-clock-out ()
-;;   (interactive)
-;;   (save-excursion
-;;     (beginning-of-line 0)
-;;     (org-remove-empty-drawer-at "LOGBOOK" (point))))
-
-;; (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
 
 
 ;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
@@ -1327,7 +1195,42 @@ none."
 (use-package! org-journal
   :config
   (setq org-journal-dir (file-truename "/home/lj/Documents/FoaMace/weekly-planning/")
-        org-journal-file-format "%Y-%m-%d.org"))
+        org-journal-file-format "%Y-%m-%d.org")
+  (defun my/consult-org-journal (&optional initial)
+    "Search through org-journal entries using `consult-ripgrep` or `consult-grep`.
+
+This function searches for keywords in the directory specified by `org-journal-dir`.
+It provides live preview of the matches and uses the active completion framework
+(recommended: `vertico`).
+
+If `ripgrep` (rg) is installed, it uses `consult-ripgrep` for faster search.
+Otherwise, it falls back to `consult-grep`.
+
+INITIAL is the optional initial input string."
+    (interactive "P")
+    ;; Ensure org-journal-dir is available
+    (let ((dir (if (boundp 'org-journal-dir)
+                   org-journal-dir
+                 (user-error "`org-journal-dir' is not defined. Please ensure org-journal is loaded"))))
+      
+      ;; Check if the directory exists
+      (unless (file-directory-p dir)
+        (user-error "Journal directory `%s' does not exist" dir))
+
+      ;; Dispatch to the appropriate consult command
+      (cond
+       ((executable-find "rg")
+        ;; consult-ripgrep takes (DIR &optional INITIAL)
+        (consult-ripgrep dir initial))
+       
+       ((executable-find "grep")
+        ;; consult-grep takes (DIR &optional INITIAL)
+        (consult-grep dir initial))
+       
+       (t
+        (user-error "System requirement missing: neither `rg` (ripgrep) nor `grep` found")))))
+  (map! :leader
+        :desc "Consult search org journal" "n j k" #'my/consult-org-journal))
 
 
 ;; org supertag
