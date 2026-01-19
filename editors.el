@@ -253,6 +253,7 @@ linkcolor=black}
 (use-package! org-modern
   :config
   (setq org-modern-star 'replace)
+  (setq org-modern-checkbox nil)
   (setq org-modern-table nil))
 
 ;; tex
