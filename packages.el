@@ -172,3 +172,7 @@
 
 ;; disable the default yas snippets
 (package! doom-snippets :ignore t)
+
+;; add todoist support
+(package! org-todoist :recipe (:host github :repo "lillenne/org-todoist" :branch "main" :files ("org-todoist.el")))
+(package! org-tidy :recipe (:host github :repo "jxq0/org-tidy"))

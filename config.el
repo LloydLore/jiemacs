@@ -1218,6 +1218,16 @@ tasks."
   
   (awesome-tray-mode +1))
 
+;; todoist 
+(use-package! org-todoist
+  :after org
+  :config
+  (setq org-todoist-api-token (getenv "TODOIST_API_TOKEN")))
+
+(use-package! org-tidy
+  :hook
+  (org-mode . org-tidy-mode))
+
 
 ;; (load-file "/mnt/c/tools/msys64/home/vjwlq9/.config/doom/org-mode-setup-universal-os.el")
 ;; (load-file "/mnt/c/tools/msys64/home/vjwlq9/.config/doom/agenda.el")

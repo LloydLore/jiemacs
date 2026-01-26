@@ -8,7 +8,8 @@
    '("/home/lj/git/org/cpt.org" "/home/lj/git/org/diary.org"
      "/home/lj/git/org/projects.org" "/home/lj/git/org/refile.org"
      "/home/lj/git/org/todo.org"
-     "/home/lj/Documents/FoaMace/weekly-planning/2025-12-03.org")))
+     "/home/lj/Documents/FoaMace/weekly-planning/2025-12-03.org"))
+ '(safe-local-variable-values '((org-list-indent-offset . 2))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
