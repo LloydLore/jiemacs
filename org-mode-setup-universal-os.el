@@ -109,7 +109,7 @@
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
               (sequence "ISSUE(i)" "EVENT(e)" "BUG(b)" "|" "SOLOVED(s)")
-              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "MEETING" "|" "CANCELLED(c@/!)" "PHONE" "DELEGATE(l@/!)" ))))
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "MEETING" "DELEGATE(l@/!)" "|" "CANCELLED(c@/!)" "PHONE" ))))
 
 ;; fast todo selection
 (setq org-use-fast-todo-selection t)
