@@ -15,7 +15,7 @@
                             (font-spec :family "Noto Sans CJK SC Light"))))
 
       ;; (setq doom-font (font-spec :family "Iosevka NFM" :weight 'medium :size 10.0))
-      (setq doom-font (font-spec :family "Cascadia Code NF" :weight 'medium :size 12.0))
+      (setq doom-font (font-spec :family "Maple Mono NF CN" :weight 'medium :size 10.0))
       (advice-add #'cape-file :after #'+set-cjk)
       (add-hook! 'after-setting-font-hook #'+set-cjk)
       (add-hook! 'after-setting-font-hook #'hide-mode-line-mode)))
