@@ -1195,7 +1195,13 @@ none."
 (use-package! org-journal
   :config
   (setq org-journal-dir (file-truename "/home/lj/Documents/FoaMace/weekly-planning/")
-        org-journal-file-format "%Y-%m-%d.org")
+        org-journal-file-type 'monthly
+        org-journal-file-format "%Y-%m.org"
+        org-journal-date-format "%Y-%m-%d %A"
+        org-journal-time-format "%H:%M "
+        org-journal-time-prefix "** "
+        org-journal-date-prefix "* "
+        org-journal-date-regexp "^\\* \\([0-9]\\{4\\}-[0-9]\\{2\\}-[0-9]\\{2\\}\\)")
   (defun my/consult-org-journal (&optional initial)
     "Search through org-journal entries using `consult-ripgrep` or `consult-grep`.
 
